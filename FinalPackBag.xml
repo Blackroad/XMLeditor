@@ -1,0 +1,1238 @@
+<Machines xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Machine Id="FinalPackBagDev">
+    <General type="single">
+      <PreviousSelectedPartId>MA07435A027</PreviousSelectedPartId>
+      <PreviousSelectedPartVersion>---</PreviousSelectedPartVersion>
+      <PreviousSelectedBomVersion>---</PreviousSelectedBomVersion>
+      <PreviousSelectedSide>DcaBuildClean</PreviousSelectedSide>
+      <PreviousSelectedMode>Loop</PreviousSelectedMode>
+      <ShowSleepModeCheckbox>true</ShowSleepModeCheckbox>
+      <ShowDiagnostics>true</ShowDiagnostics>
+      <SoftStop>true</SoftStop>
+      <PanelCounterVisible>true</PanelCounterVisible>
+      <AudibleIndicatorWave>hjgk</AudibleIndicatorWave>
+      <ByPassColor>MediumVioletRed</ByPassColor>
+      <LotTypes>
+        <string>40 Engineering</string>
+        <string>70 Qualafiable</string>
+        <string>80 Qualified</string>
+        <string>90 Production</string>
+      </LotTypes>
+      <DataValueGridSettings>
+        <InvalidateLots>false</InvalidateLots>
+        
+        <SuppressInvalidateLotsDialog>true</SuppressInvalidateLotsDialog>
+        
+        <FactoryConfigObject>DataValueGridSettingsConfig</FactoryConfigObject>
+        <DisplayName>DataValueGridSettings</DisplayName>
+        <LotGridColumnSettings>
+          <ColumnSettings>
+            <Name>ReadSequence</Name>
+            <Visible>true</Visible>
+            <HeaderText>Number</HeaderText>
+            <Width xsi:nil="true" />
+            <ReadOnly>true</ReadOnly>
+          </ColumnSettings>
+          <ColumnSettings>
+            <Name>Scrap</Name>
+            <Visible>true</Visible>
+            <HeaderText>Scrapy Indicator</HeaderText>
+            <Width xsi:nil="true" />
+            <ReadOnly>false</ReadOnly>
+          </ColumnSettings>
+          <ColumnSettings>
+            <Name>LotId</Name>
+            <Visible>true</Visible>
+            <HeaderText>Lot Id</HeaderText>
+            <Width xsi:nil="true" />
+            <ReadOnly>false</ReadOnly>
+          </ColumnSettings>
+          <ColumnSettings>
+            <Name>FailureModesAvail</Name>
+            <Visible>false</Visible>
+            <HeaderText>Failures</HeaderText>
+            <Width xsi:nil="true" />
+            <ReadOnly>true</ReadOnly>
+            <ColumnEditorObjectName>FailureMode</ColumnEditorObjectName>
+          </ColumnSettings>
+          <ColumnSettings>
+            <Name>Comments</Name>
+            <Visible>false</Visible>
+            <HeaderText>Comments</HeaderText>
+            <Width xsi:nil="true" />
+            <ReadOnly>true</ReadOnly>
+          </ColumnSettings>
+          <ColumnSettings>
+            <Name>ScrappingPart</Name>
+            <Visible>false</Visible>
+            <HeaderText>ScrappingPart</HeaderText>
+            <Width xsi:nil="true" />
+            <ReadOnly>true</ReadOnly>
+          </ColumnSettings>
+        </LotGridColumnSettings>
+      </DataValueGridSettings>
+      <CurrentExportFolder>C:\ExportCurrent</CurrentExportFolder>
+      <OldExportFolder>C:\ExportOld</OldExportFolder>
+      <MaxExportFilesNumber>5</MaxExportFilesNumber>
+    </General>
+    <EquipmentControllers>
+      <FactoryConfigObject>EquipmentControllersMachineConfig</FactoryConfigObject>
+      <MesSystems>
+        <Mes Id="FW STAGING-2 Web Service">
+          <WorkStationID>DefaultWorkstationId</WorkStationID>
+          <FactoryConfigObject>MesMachineConfig</FactoryConfigObject>
+          <DisplayName>MES - FW STAGING 2</DisplayName>
+          <FactoryObject>MMesFactoryWorksWS</FactoryObject>
+          <Connected>false</Connected>
+          <PromiseUrl>https://phxlxvapp18.tmp.medtronic.com:8443/mes-facade-service/facadeService</PromiseUrl>
+          <PartCategory>34</PartCategory>
+          <WebServiceConfigurationName>facadeServicePortssl</WebServiceConfigurationName>
+          <MesInstanceName>dfwmtcs2_mbx</MesInstanceName>
+          <WorkStationID>DefaultWorkstationId</WorkStationID>
+        </Mes>
+      </MesSystems>
+      <Cameras>
+        <Camera Id="DataMan152">
+          <FactoryConfigObject>CameraMachineConfig</FactoryConfigObject>
+          <DisplayName>CAMERA - Manual</DisplayName>
+          <FactoryObject>ManualCamera</FactoryObject>
+          <Connected>true</Connected>
+          <CommunicationType>COM</CommunicationType>
+          <ComPort />
+          <IPAddress />
+          <IPPort />
+          <Location>C</Location>
+          <Model>DataMan</Model>
+          <SerialNumber>MANUAL</SerialNumber>
+          <ComputerName>Not defined in machine.xml</ComputerName>
+          <MaxReadRetry>3</MaxReadRetry>
+        </Camera>
+      </Cameras>
+      <LabelPrinters>
+        <LabelPrinter Id="ZebraPrinter">
+          <FactoryConfigObject>LabelMachineConfig</FactoryConfigObject>
+          <DisplayName>Zebra Printer</DisplayName>
+          <FactoryObject>ZebraLabelPrinter</FactoryObject>
+          <Connected>true</Connected>
+          <NumberOfLabelsToPrint>1</NumberOfLabelsToPrint>
+          <TestLabelValue>TestLabel</TestLabelValue>
+          <Droplocation>C:\XMLFiles\</Droplocation>
+          <FileNameTemplate>MyFile{Timestamp}.txt</FileNameTemplate>
+          <PrintQueue>ZebraZ4M_1</PrintQueue>
+          <PrintFormat>Hybrid_MUT_ZM400</PrintFormat>
+          <ConfigNumber>0</ConfigNumber>
+        </LabelPrinter>
+      </LabelPrinters>
+      <RFIDs>
+        <RFID Id="ManualRFID">
+          <FactoryConfigObject>RFIDConfig</FactoryConfigObject>
+          <DisplayName>RFID Manual Dialog</DisplayName>
+          <FactoryObject>ManualRFIDController</FactoryObject>
+          <Connected>false</Connected>
+          <DisplayTestForm>true</DisplayTestForm>
+          <IP>1.11.1.1.</IP>
+          <Port>0</Port>
+          <Antennas />
+        </RFID>
+        <RFID Id="ImpinjRFID">
+          <FactoryConfigObject>RFIDConfig</FactoryConfigObject>
+          <DisplayName>Impinj RFID reader</DisplayName>
+          <FactoryObject>ImpinjRFIDController</FactoryObject>
+          <Connected>true</Connected>
+          <DisplayTestForm>false</DisplayTestForm>
+          <IP>172.28.113.12</IP>
+          <Port>0</Port>
+          <MaxReturnedEPCLength>12</MaxReturnedEPCLength>
+          <Antennas>
+            <AntennaConfig>
+              <PortNumber>1</PortNumber>
+              <RxSensitivityInDbm>-70</RxSensitivityInDbm>
+              <TxPowerInDbm>30</TxPowerInDbm>
+            </AntennaConfig>
+            <AntennaConfig>
+              <PortNumber>2</PortNumber>
+              <RxSensitivityInDbm>-70</RxSensitivityInDbm>
+              <TxPowerInDbm>30</TxPowerInDbm>
+            </AntennaConfig>
+            <AntennaConfig>
+              <PortNumber>9</PortNumber>
+              <RxSensitivityInDbm>-70</RxSensitivityInDbm>
+              <TxPowerInDbm>30</TxPowerInDbm>
+            </AntennaConfig>
+          </Antennas>
+        </RFID>
+      </RFIDs>
+      <CGIOControllers>
+        <FactoryConfigObject>IOControllerConfigs</FactoryConfigObject>
+        <CGIOController Id="CGIOController">
+          <FactoryConfigObject>IOControllerConfig</FactoryConfigObject>
+          <DisplayName>CGDIO - Adam</DisplayName>
+          <FactoryObject>CGIOController</FactoryObject>
+          <Connected>true</Connected>
+          <CommFactoryObject>CameraAdamIComm</CommFactoryObject>
+          <ConnectionSettings>
+            <DtrEnabled>false</DtrEnabled>
+            <LineTerminatingString />
+            <AsyncDataReceive>false</AsyncDataReceive>
+            <RtsEnabled>false</RtsEnabled>
+            <DiscardNull>false</DiscardNull>
+            <IPAddress>172.28.113.4</IPAddress>
+            <IPPort>502</IPPort>
+            <ReadTimeoutSpecified>false</ReadTimeoutSpecified>
+            <WriteTimeoutSpecified>false</WriteTimeoutSpecified>
+            <BaudRateSpecified>false</BaudRateSpecified>
+            <DataBitsSpecified>false</DataBitsSpecified>
+            <PollerConfigSettings>
+              <PollInterval>100</PollInterval>
+            </PollerConfigSettings>
+          </ConnectionSettings>
+          <IOManagerFactoryObject>IOManagerAdam</IOManagerFactoryObject>
+          <IOManagers>
+            <IOManagerConfig Channel="1" Description="Channel 1 - Input" Name="1" UniqueIdentifier="1" />
+            <IOManagerConfig Channel="17" Description="Channel 17 - Output" Name="17" UniqueIdentifier="17" />
+          </IOManagers>
+        </CGIOController>
+      </CGIOControllers>
+    </EquipmentControllers>
+    <Products>
+      <FactoryConfigObject>ProductsProductsConfig</FactoryConfigObject>
+      <Product Id="MA12836A009" ValidateBOMVer="false" ValidatePartId="false">
+        <FactoryConfigObject>ProductsProductConfig</FactoryConfigObject>
+        <Sides>
+          <FactoryConfigObject>ProductsSidesConfig</FactoryConfigObject>
+          <Side Id="Test">
+            <FactoryConfigObject>ProductsSideConfig</FactoryConfigObject>
+            <Mes Id="FW STAGING-2 Web Service">
+              <FactoryConfigObject>ProductsMesConfig</FactoryConfigObject>
+              <Steps>
+                <Step Description="PRODUCTION MA12836" Id="PRODUCTION MA12836" NextNextStepId="Not NULL" NextStepId="Not NULL" StepId="FinalPackBag.09100" StepResourceId="KZLABEL7">
+                  <StepIDVersion>1</StepIDVersion>
+                  <InventoryLine>InvDummy</InventoryLine>
+                  <InventoryKit>InvDummy</InventoryKit>
+                  <InventoryStock>InvStockB2</InventoryStock>
+                  <Location>Sizing</Location>
+                  <InlineBom>false</InlineBom>
+                  <InitialPanel>false</InitialPanel>
+                  <HspFeeders>false</HspFeeders>
+                  <AudibleIndicator>true</AudibleIndicator>
+                  <Rules>
+                    <Rule>TrackIn</Rule>
+                    <Rule>TrackOut</Rule>
+                  </Rules>
+                </Step>
+              </Steps>
+            </Mes>
+            <RFID Id="ImpinjRFID" />
+            <Camera Id="Manual" type="single">
+            </Camera>
+            <CGIOController Id="CGIOController" />
+            <LabelPrinter Id="ZebraPrinter">
+              <LotType>P</LotType>
+              <LotCustPartId />
+              <AuthUsers>
+                <string>random1</string>
+              </AuthUsers>
+            </LabelPrinter>
+            <ReprintAuthList>
+              <AuthUsers>
+                <string>random1</string>
+                <string>random2</string>
+              </AuthUsers>
+            </ReprintAuthList>
+            <Workflow Id="">
+              
+              <FactoryConfigObject>ProductsWorkflowConfig</FactoryConfigObject>
+              <WorkflowActivitys>
+                <FactoryConfigObject>ProductsWorkflowActivitysConfig</FactoryConfigObject>
+
+                <WorkflowActivity Id="Remember Current User" type="step">
+                  <FactoryConfigObject>ProductsWorkflowActivityConfig</FactoryConfigObject>
+                  <DisplayName>Idle system</DisplayName>
+                  <Activity FactoryWorkFlowObject="RememberCurrentUser" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Remember Current User</DisplayName>
+                  </Activity>
+                  <KeyValuePairs />
+                  <WorkFlowTimeOut>0</WorkFlowTimeOut>
+                </WorkflowActivity>
+
+                
+                <WorkflowActivity Id="Open Association Form" type="step">
+                  <FactoryConfigObject>ProductsWorkflowActivityConfig</FactoryConfigObject>
+                  <Activity FactoryWorkFlowObject="OpenAssociationForm" Id="OpenAssociationForm" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Open Association Form</DisplayName>
+                  </Activity>
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>NumberOfSerials</Id>
+                      <Value>2</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>IdleDuration</Id>
+                      <Value>1</Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                </WorkflowActivity>
+                
+                <WorkflowActivity Id="Assosiate tray label RFID EPC with lots" loopCount="2" type="step">
+                  <FactoryConfigObject>ProductsWorkflowActivityConfig</FactoryConfigObject>
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>UserInputMessage</Id>
+                      <Value>Incorrect or duplicate label preamble. Contact area leaders.</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>SuccessInput</Id>
+                      <Value>None</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>AllowedPreambles</Id>
+                      <Value>AE</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>UserWaitMessage</Id>
+                      <Value>Please wait while lots are verified.</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>MatrixDoesNotReadMessage</Id>
+                      <Value>ERROR: The 2D matrix does not read. Contact area leaders.</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>UserMessage</Id>
+                      <Value>Scan the tray label matrix</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>IdleDuration</Id>
+                      <Value>3000</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>VerifyMaxNumberOfLotsErrorMessage</Id>
+                      <Value>ERROR: Number of lots in tray exceeds the max configured number allowed. </Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>FetchLotsForCurrent</Id>
+                      <Value>Tray</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>DuplicateLotIDsMessage</Id>
+                      <Value>Duplicate-Lot found in this loop. [Lot ID][{0}]</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>OnHoldLotIDsMessage</Id>
+                      <Value>Lot-on-Hold found in this loop. [Lot ID][{0}]</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>ScrappedLotIDsMessage</Id>
+                      <Value>Lot-Scrapped found in this loop. [Lot ID][{0}]</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>LotAlreadyTrackedInMessage</Id>
+                      <Value>Lot-Tracked-In found in this loop. [Lot ID][{0}]</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>LotAtWrongFwStepMessage</Id>
+                      <Value>Lot-in-Wrong-Step found in this loop. [Lot ID][{0}]</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>MessageStepIsNotDefinied</Id>
+                      <Value>Check lot error is not a valid with not Process Plan Steps are defined.</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>ContactAreaLeaderMessage</Id>
+                      <Value>Contact area leader to troubleshoot. </Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>CancelButtonRelatedMessage</Id>
+                      <Value>Click CANCEL to Exit Loop. </Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>ExportButtonRelatedMessage</Id>
+                      <Value>If Lot List is needed, click EXPORT. </Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>RefreshButtonRelatedMessage</Id>
+                      <Value>Click REFRESH if error has been corrected.</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>LotQaulInconsistencyMessage</Id>
+                      <Value>Mixed-Lot-Qual-Level found in this Loop. [LotID][{0}]</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>InconsistencyMessage</Id>
+                      <Value>[The First One][{0}] VS [Current One][{1}]</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>ReadTrayRfidLabelText</Id>
+                      <Value>Read Tray {0} RFID label</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>PreviousResultReadTrayRfidLabelText</Id>
+                      <Value>Insert Tray {0} into the bag. Label end first.</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>PartDashInconsistencyMessage</Id>
+                      <Value>Mixed-Product-Number-or-Dash found in this Loop. [LotID][{0}]</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>TrayPartNumberInconsistencyMessage</Id>
+                      <Value>Mixed-Product-Number-or-Dash found in this Loop. [RFID Tag][{0}]</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>IncorrectPreambleMessage</Id>
+                      <Value> RFID tag {0} has incorrect preamble.</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>DuplicatePreambleMessage</Id>
+                      <Value> RFID tag {0} is duplicated.</Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                  <Activity FactoryWorkFlowObject="PrepareToReadTrayEpc" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Prepare To Read Tray EPC</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="ReadRFIDTags" Id="ImpinjRFIDNearfieldAntenna1" command="GenericWorkFlow">
+                    <Antennas>
+                      <AntennaConfig>
+                        <PortNumber>1</PortNumber>
+                        <RxSensitivityInDbm>-70</RxSensitivityInDbm>
+                        <TxPowerInDbm>30</TxPowerInDbm>
+                      </AntennaConfig>
+                    </Antennas>
+                    <FactoryConfigObject>RFIDActivityConfig</FactoryConfigObject>
+                    <DisplayName>Read Tray RFID EPC using nearfield antenna</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="DisplayTrayEpc" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Display Tray EPC</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="CheckTrayRfid" Id="CheckTrayRfid" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Check Tray RFID EPC</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="ScanTrayLabel" Id="ScanTrayLabel" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Scan Tray Label 2D matrix</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="CancellableScan2DMatrix" Id="Manual" command="GenericWorkFlow">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Decode Tray Label 2D matrix from DM152 Camera</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="PopulateTrayPartNumberAndLots" Id="PopulateTrayPartNumberAndLots" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Populate Tray Part Number And Lots</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity>
+                  
+                  <Activity FactoryWorkFlowObject="CheckDuplicateLotIDs" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Check Duplicate Lot IDs</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="Marker" Id="RefreshMarker" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Refresh</DisplayName>
+                  </Activity>
+                  
+                  <Activity FactoryWorkFlowObject="WorkFlowLoopUntil" Id="WorkFlowLoopUntil" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Stay in loop until loop count equals datavalues read</DisplayName>
+                  </Activity>
+                  <KeyValuePairs />
+                  <WorkFlowTimeOut>0</WorkFlowTimeOut>
+                </WorkflowActivity>
+
+                
+                <WorkflowActivity Id="Reread Marker" type="step">
+                  <FactoryConfigObject>ProductsWorkflowActivityConfig</FactoryConfigObject>
+                  <Activity FactoryWorkFlowObject="Marker" Id="ReRead1Marker" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Re-read #1 Marker</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="PrepareToCorrectTraysInBagCheck" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Chamber RFID Read Preparation</DisplayName>
+                  </Activity>
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>ChamberReadNumberKey</Id>
+                      <Value>TraysEpcsOnly</Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                </WorkflowActivity>
+    
+                <WorkflowActivity Id="Open chamber locking pin" type="step">
+                  <FactoryConfigObject>ProductsWorkflowActivityConfig</FactoryConfigObject>
+                  <Activity FactoryWorkFlowObject="TriggerOutput" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Open chamber locking pin</DisplayName>
+                  </Activity>
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>PORTID</Id>
+                      <Value>17</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>TRIGGERVALUE</Id>
+                      <Value>false</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>TRIGGERTIME</Id>
+                      <Value>-1</Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                  <Activity FactoryWorkFlowObject="SaveChamberUnlockParameters" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Saving chamber parameters</DisplayName>
+                  </Activity>
+                </WorkflowActivity>
+       
+                <WorkflowActivity Id="Confirm Correct Trays in Bag" type="step">
+                  <Activity FactoryWorkFlowObject="BagLoginIfUserChanged" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Login If User Changed</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="Marker" Id="CheckChamberClosedMarker1" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Check Chamber Closed Marker</DisplayName>
+                  </Activity>
+                  <Activity Buttons="ChamberReady,Cancel" FactoryWorkFlowObject="DisplayAssociationMessage" Id="WaitForChamberReadyMessage" Message="Seal ziploc, rubber band the brick, and affix the tamper seal.  Place brick in chamber, close and latch the cover, then click CHAMBER READY.  Click CANCEL to Exit Loop if there was a problem with the tamper seal." NeedsInteraction="true" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>AssociationMessageConfig</FactoryConfigObject>
+                    <DisplayName>ReprintDialog</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity>
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>ReloginMessage</Id>
+                      <Value>Re-read was approved. WARNING: The area leader is still logged in. The Assembler should log in again on the next screen to continue the process under their User ID.</Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                  <WorkFlowTimeOut>0</WorkFlowTimeOut>
+                </WorkflowActivity>
+                
+       
+                <WorkflowActivity Id="Check chamber lid switch closed" type="step">
+                  <FactoryConfigObject>ProductsWorkflowActivityConfig</FactoryConfigObject>
+                  <Activity FactoryWorkFlowObject="CheckIOInput" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                  </Activity>
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>PORTID</Id>
+                      <Value>1</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>TRIGGERVALUE</Id>
+                      <Value>false</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>OtherwiseActivity</Id>
+                      <Value>CheckChamberClosedMarker1</Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                </WorkflowActivity>
+                <WorkflowActivity Id="Close chamber locking pin" type="step">
+                  <FactoryConfigObject>ProductsWorkflowActivityConfig</FactoryConfigObject>
+                  <Activity FactoryWorkFlowObject="TriggerOutput" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Close chamber locking pin</DisplayName>
+                  </Activity>
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>PORTID</Id>
+                      <Value>17</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>TRIGGERVALUE</Id>
+                      <Value>true</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>TRIGGERTIME</Id>
+                      <Value>-1</Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                </WorkflowActivity>
+           
+                
+                <WorkflowActivity Id="Chamber RFID Reading" type="step">
+                  <Activity FactoryWorkFlowObject="Marker" Id="ReRead4Marker" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Retry</DisplayName>
+                  </Activity>
+                  <Activity Buttons="Cancel" FactoryWorkFlowObject="DisplayAssociationMessage" Id="StartReadingBrickRFID" Message="Reading Brick RFID for Bag integrity test" NeedsInteraction="false" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>AssociationMessageConfig</FactoryConfigObject>
+                    <DisplayName>Reading Brick RFID</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="PrepareToChamberRfidRead" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Chamber RFID Read Preparation</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="ReadRfidTagsFromChamberLimitedTime" Id="ReadRfidTagsToCHeckBagIntegrity1" command="GenericWorkFlow" readTime="15">
+                    <Antennas>
+                      <AntennaConfig>
+                        <PortNumber>2</PortNumber>
+                        <RxSensitivityInDbm>-70</RxSensitivityInDbm>
+                        <TxPowerInDbm>10</TxPowerInDbm>
+                      </AntennaConfig>
+                    </Antennas>
+                    <FactoryConfigObject>RFIDActivityConfig</FactoryConfigObject>
+                    <DisplayName>Read RFID TAGS TO CHECK BAG INTEGRITY1</DisplayName>
+                  </Activity>
+  
+                       Check chamber lid switch closed
+                  <Activity FactoryWorkFlowObject="CheckIOInputForBagIntegrity" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                  </Activity>                 
+                  <Activity Buttons="ReRead,Cancel" FactoryWorkFlowObject="DisplayAssociationMessage" Id="ListWasOpenMessage" Message="Lid was open at the end of EPC verification." NeedsInteraction="true" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>AssociationMessageConfig</FactoryConfigObject>
+                    <DisplayName>Lid was open</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity> 
+                  <Activity FactoryWorkFlowObject="Marker" Id="VerifyChamberClosedForBagIntegrity" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Lid Closed Marker</DisplayName>
+                  </Activity> 
+                  <Activity FactoryWorkFlowObject="CheckBagIntegrity" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Check Bag Integrity</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity>
+                  <Activity Buttons="Cancel" FactoryWorkFlowObject="DisplayAssociationMessage" Id="continueReadingBrickRFID" Message="Bag test passed, reading Brick RFID" NeedsInteraction="false" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>AssociationMessageConfig</FactoryConfigObject>
+                    <DisplayName>Reading Brick RFID</DisplayName>
+                  </Activity>
+                   <Activity Id="" command="IdleSystem">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Delay Time</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="ReadRfidTagsFromChamber" Id="ReadTraysRfidTagsFromChamber1" command="GenericWorkFlow" readTime="5">
+                    <Antennas>
+                      <AntennaConfig>
+                        <PortNumber>2</PortNumber>
+                        <RxSensitivityInDbm>-70</RxSensitivityInDbm>
+                        <TxPowerInDbm>30</TxPowerInDbm>
+                      </AntennaConfig>
+                    </Antennas>
+                    <FactoryConfigObject>RFIDActivityConfig</FactoryConfigObject>
+                    <DisplayName>Chamber reading EPCs</DisplayName>
+                  </Activity>
+               
+                       Check chamber lid switch closed
+                  <Activity FactoryWorkFlowObject="CheckIOInput" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                  </Activity>                 
+                  <Activity Buttons="ReRead,Cancel" FactoryWorkFlowObject="DisplayAssociationMessage" Id="LidWasOpenMessage" Message="Lid was open at the end of the EPC verification. Click CANCEL to Exit Loop or RE-READ to try again." NeedsInteraction="true" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>AssociationMessageConfig</FactoryConfigObject>
+                    <DisplayName>Lid was open</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity> 
+                  <Activity FactoryWorkFlowObject="SetReReadMarkerToFirstReRead" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>ReRead #1</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="Marker" Id="LidClosedAtEpcVerification1" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Lid Closed Marker</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="SetReReadMarkerToFourthReRead" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>ReRead #4</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="VerifyRfidEpcsFromChamber" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Verify RFID EPCs From Chamber</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity>
+                  <Activity Buttons="Cancel" FactoryWorkFlowObject="DisplayAssociationMessage" Id="GoodBrickRFIDRead1" Message="Good brick RFID read. Printing bag label." NeedsInteraction="false" command="GenericWorkFlowSync">
+                  </Activity>
+                  <Activity Id="" command="IdleSystem">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Delay Time</DisplayName>
+                  </Activity>
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>PORTID</Id>
+                      <Value>1</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>TRIGGERVALUE</Id>
+                      <Value>true</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>OtherwiseActivity</Id>
+                      <Value>LidClosedAtEpcVerification1</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>OtherwiseActivityForBagIntegrity</Id>
+                      <Value>VerifyChamberClosedForBagIntegrity</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>MissingRFIDTagMessage</Id>
+                      <Value>ERROR: RFID Tag(s) missing: {0}</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>UnexpectedRFIDTagMessage</Id>
+                      <Value>ERROR: Unexpected RFID Tag(s) found: {0}</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>ChamberReadNumberKey</Id>
+                      <Value>TraysEpcsOnly</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>BagInegrityErrorMessage</Id>
+                      <Value>ERROR: Tray RFID tag was read during Bag Integrity Test: {0}.  Contact area leader.</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>IdleDuration</Id>
+                      <Value>3000</Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                </WorkflowActivity>
+                
+                
+                <WorkflowActivity Id="Print Bag Label" type="step">
+                  <Activity FactoryWorkFlowObject="Marker" Id="ReprintMarker" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Reprint Marker</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="CheckReprintAuthorization" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsReprintConfig</FactoryConfigObject>
+                    <DisplayName>Check Reprint Authorization</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="FillDataValuesWithBagLots" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Fill DataValues With Bag Lots</DisplayName>
+                  </Activity>
+                  <Activity Id="" command="PrintLabel">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="SetBagLabelPrintedFlag" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Set Bag Label Printed Flag</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="BagLoginIfUserChanged" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Login If User Changed</DisplayName>
+                  </Activity>
+                  <Activity Buttons="Reprint,Cancel" FactoryWorkFlowObject="DisplayAssociationMessage" Id="DisplayReprintMessage1" Message="Get bag label and read RFID. Contact area leader if RFID does not read." NeedsInteraction="false" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>AssociationMessageConfig</FactoryConfigObject>
+                    <DisplayName>ReprintDialog</DisplayName>
+                  </Activity>
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>DefaultCaption</Id>
+                      <Value>Read RFID</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>ReloginMessage</Id>
+                      <Value>Reprint was succesful. WARNING: The area leader is still logged in. The Assembler should log in again on the next screen to continue the process under their User ID.</Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                </WorkflowActivity>
+                
+                
+                <WorkflowActivity Id="Associate bag label RFID EPC wtih lot ID's" type="step">
+                  <Activity FactoryWorkFlowObject="ReadBagEpc" Id="ImpinjRFIDNearfieldAntenna2" command="GenericWorkFlow">
+                    <Antennas>
+                      <AntennaConfig>
+                        <PortNumber>1</PortNumber>
+                        <RxSensitivityInDbm>-70</RxSensitivityInDbm>
+                        <TxPowerInDbm>30</TxPowerInDbm>
+                      </AntennaConfig>
+                    </Antennas>
+                    <FactoryConfigObject>RFIDActivityConfig</FactoryConfigObject>
+                    <DisplayName>Read Bag RFID EPC using nearfield antenna</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="DisplayBagEpc" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Display Bag EPC</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="CheckBagEpc" Id="CheckBagEpc" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Check Bag RFID Tag</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="CancellableScan2DMatrix" Id="Manual" command="GenericWorkFlow">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Decode Bag Label 2D matrix from DM152 Camera</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="TemporarilyStoreBagLabel2DMatrix" Id="TemporarilyStoreBagLabel2DMatrix" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Temporarily Store Part Number And Lots From Bag Label 2D Matrix</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="VerifyMatches2DMatrixAndDropFile" Id="VerifyMatches2DMatrixAndDropFile" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Verify Matches 2D Matrix And Drop File</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity>                  
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>AllowedPreambles</Id>
+                      <Value>B</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>IncorrectPreambleMessage</Id>
+                      <Value> RFID tag {0} has incorrect preamble. </Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>ContactAreaLeaderMessage</Id>
+                      <Value>Contact area leader to troubleshoot. </Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>ScanPrintedLabelPromptMessage</Id>
+                      <Value>Scan the Printed Label 2D matrix. Contact area leader if matrix does not scan.</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>UserWaitMessage</Id>
+                      <Value>Please wait while data are verified.</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>MatrixDoesNotReadMessage</Id>
+                      <Value>ERROR: The 2D matrix does not read. </Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>VerifyMaxNumberOfLotsErrorMessage</Id>
+                      <Value>ERROR: Number of lots in brick exceeds the max configured number allowed. </Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>CancelButtonRelatedMessage</Id>
+                      <Value>Click CANCEL to Exit Loop. </Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>ExportButtonRelatedMessage</Id>
+                      <Value>If Lot List is needed, click EXPORT. </Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>2DMatrixMismatchMessage</Id>
+                      <Value>Bag 2D Matrix does not match Drop File. </Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                </WorkflowActivity>
+
+                
+                <WorkflowActivity Id="Affix bag label and confirm bag label on correct bag" type="step">
+                  <FactoryConfigObject>ProductsWorkflowActivityConfig</FactoryConfigObject>
+                  <Activity FactoryWorkFlowObject="Marker" Id="ReRead2Marker" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Re-read #2 Marker</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="BagLoginIfUserChanged" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Login If User Changed</DisplayName>
+                  </Activity>
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>ReloginMessage</Id>
+                      <Value>Re-read was approved. WARNING: The area leader is still logged in. The Assembler should log in again on the next screen to continue the process under their User ID.</Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                </WorkflowActivity>
+  
+                <WorkflowActivity Id="Open chamber locking pin for bag" type="step">
+                  <FactoryConfigObject>ProductsWorkflowActivityConfig</FactoryConfigObject>
+                  <Activity FactoryWorkFlowObject="TriggerOutput" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Trigger Output</DisplayName>
+                  </Activity>
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>PORTID</Id>
+                      <Value>17</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>TRIGGERVALUE</Id>
+                      <Value>false</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>TRIGGERTIME</Id>
+                      <Value>-1</Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                </WorkflowActivity>
+         
+                <WorkflowActivity Id="Affix bag label and confirm bag label on correct bag (part 2)" type="step">
+                  <Activity FactoryWorkFlowObject="Marker" Id="CheckChamberClosedMarker2" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Check Chamber Closed Marker</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="SetReReadMarkerToFirstReRead" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    
+                    
+                    <DisplayName>Set ReRead Marker To First ReRead</DisplayName>
+                  </Activity>
+                  <Activity Buttons="ChamberReady,ReRead,Cancel" FactoryWorkFlowObject="DisplayAssociationMessage" Id="WaitForChamberReadyMessageAfterOpen" Message="Remove brick from Chamber and affix label to bag, If bag label was successfully affixed: Return brick to Chamber, close and latch Chamber lid, and click CHAMBER READY to perform second read. If bag label was damaged while affixing to the bag: Cut and dispose of label, and select RE-READ to return to the first chamber read and reprint the label. If bag was damaged while affixing label: Click CANCEL to Exit Loop." NeedsInteraction="true" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>AssociationMessageConfig</FactoryConfigObject>
+                    <DisplayName>Wait For ChamberReady Message After Open</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity>
+                  
+                  <Activity FactoryWorkFlowObject="Marker" Id="RequiredActionsMarker" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Required Actions Marker</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="CheckIfRequiredActionsExpected" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Check If Stop Expected</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="CheckAuthorizationToStopAfterPrint" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Check Authorization To Stop After Print</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="GoToReReadIfExpected" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Go To Re-read If Expected</DisplayName>
+                  </Activity>
+                </WorkflowActivity>
+
+              
+                <WorkflowActivity Id="Check chamber lid switch closed for bag" type="step">
+                  <FactoryConfigObject>ProductsWorkflowActivityConfig</FactoryConfigObject>
+                  <Activity FactoryWorkFlowObject="CheckIOInput" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                  </Activity>
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>PORTID</Id>
+                      <Value>1</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>TRIGGERVALUE</Id>
+                      <Value>false</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>OtherwiseActivity</Id>
+                      <Value>CheckChamberClosedMarker2</Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                </WorkflowActivity>
+                <WorkflowActivity Id="Close chamber locking pin for bag" type="step">
+                  <FactoryConfigObject>ProductsWorkflowActivityConfig</FactoryConfigObject>
+                  <Activity FactoryWorkFlowObject="TriggerOutput" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Close chamber locking pin</DisplayName>
+                  </Activity>
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>PORTID</Id>
+                      <Value>17</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>TRIGGERVALUE</Id>
+                      <Value>true</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>TRIGGERTIME</Id>
+                      <Value>-1</Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                </WorkflowActivity>
+          
+                
+                <WorkflowActivity Id="Affix bag label and confirm bag label on correct bag (part 3)" type="step">
+                  <Activity FactoryWorkFlowObject="Marker" Id="ReRead3Marker" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Retry</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="SetReReadMarkerToSecondReRead" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Retry</DisplayName>
+                  </Activity>
+                  <Activity Buttons="Cancel" FactoryWorkFlowObject="DisplayAssociationMessage" Id="StartReadingBrickRFID" Message="Reading Brick RFID for Bag integrity test" NeedsInteraction="false" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>AssociationMessageConfig</FactoryConfigObject>
+                    <DisplayName>Reading Brick RFID</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="PrepareToChamberRfidRead" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Chamber RFID Read Preparation</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="ReadRfidTagsFromChamberLimitedTime" Id="ReadRfidTagsToCHeckBagIntegrity2" command="GenericWorkFlow" readTime="5">
+                    <Antennas>
+                      <AntennaConfig>
+                        <PortNumber>2</PortNumber>
+                        <RxSensitivityInDbm>-70</RxSensitivityInDbm>
+                        <TxPowerInDbm>10</TxPowerInDbm>
+                      </AntennaConfig>
+                    </Antennas>
+                    <FactoryConfigObject>RFIDActivityConfig</FactoryConfigObject>
+                    <DisplayName>Read RFIDtTags to check bag integrity 2</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="CheckIOInputForBagIntegrity" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                  </Activity>
+                  
+                  <Activity Buttons="ReRead,Cancel" FactoryWorkFlowObject="DisplayAssociationMessage" Id="LidWasOpenAfterRFIDDecoding" Message="Lid was open at the end of the EPC verification." NeedsInteraction="true" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>AssociationMessageConfig</FactoryConfigObject>
+                    <DisplayName>Lid Was Open at the EPC verification</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity>
+
+                  <Activity FactoryWorkFlowObject="Marker" Id="VerifyChamberClosedForBagIntegrity2" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Lid Closed Marker</DisplayName>
+                  </Activity>
+				       
+                  <Activity FactoryWorkFlowObject="CheckBagIntegrity" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Check Bag Integrity</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity>
+				   <Activity Buttons="Cancel" FactoryWorkFlowObject="DisplayAssociationMessage" Id="ContinueReadingBrickRFID" Message="Bag test passed, reading Brick RFID" NeedsInteraction="false" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>AssociationMessageConfig</FactoryConfigObject>
+                    <DisplayName>Reading Brick RFID</DisplayName>
+                  </Activity>
+                   <Activity Id="" command="IdleSystem">
+				   </Activity>
+                  <Activity FactoryWorkFlowObject="ReadRfidTagsFromChamber" Id="ReadBagRfidTagsFromChamber1" command="GenericWorkFlow" readTime="5">
+                    <Antennas>
+                      <AntennaConfig>
+                        <PortNumber>2</PortNumber>
+                        <RxSensitivityInDbm>-70</RxSensitivityInDbm>
+                        <TxPowerInDbm>30</TxPowerInDbm>
+                      </AntennaConfig>             
+                    </Antennas>
+                    <FactoryConfigObject>RFIDActivityConfig</FactoryConfigObject>
+                    <DisplayName>Chamber reading EPCs</DisplayName>
+                  </Activity>
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>ChamberReadNumberKey</Id>
+                      <Value>WithBagEpc</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>BagInegrityErrorMessage</Id>
+                      <Value>ERROR: Tray RFID tag was read during Bag Integrity Test: {0}.  Contact area leader.</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>PORTID</Id>
+                      <Value>1</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>TRIGGERVALUE</Id>
+                      <Value>true</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>OtherwiseActivity</Id>
+                      <Value>LidClosedAtEpcVerification2</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>OtherwiseActivityForBagIntegrity</Id>
+                      <Value>VerifyChamberClosedForBagIntegrity2</Value>
+                    </WorkFlowActivityKeyValuePair>
+					<WorkFlowActivityKeyValuePair>
+                      <Id>IdleDuration</Id>
+                      <Value>2000</Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                </WorkflowActivity>
+                
+                <WorkflowActivity Id="Check chamber lid switch opened for RFID reading on bag" type="step">
+                  <FactoryConfigObject>ProductsWorkflowActivityConfig</FactoryConfigObject>
+                  <Activity FactoryWorkFlowObject="CheckIOInput" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                  </Activity>
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>PORTID</Id>
+                      <Value>1</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>TRIGGERVALUE</Id>
+                      <Value>true</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>OtherwiseActivity</Id>
+                      <Value>LidClosedAtEpcVerification2</Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                </WorkflowActivity>
+                
+                <WorkflowActivity Id="Affix bag label and confirm bag label on correct bag (part 4)" type="step">
+                  
+                  <Activity Buttons="ReRead,Cancel" FactoryWorkFlowObject="DisplayAssociationMessage" Id="LidWasOpenAfterRFIDDecoding" Message="Lid was open at the end of the EPC verification. Click CANCEL to Exit Loop or RE-READ to try again." NeedsInteraction="true" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>AssociationMessageConfig</FactoryConfigObject>
+                    <DisplayName>Lid Was Open at the EPC verification</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="Marker" Id="LidClosedAtEpcVerification2" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Retry</DisplayName>
+                  </Activity>                  
+                  <Activity FactoryWorkFlowObject="SetReReadMarkerToThirdReRead" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Re-read #3</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="VerifyRfidEpcsFromChamber" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Verify RFID EPCs From Chamber</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="WaitForUserInput" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Wait for user input</DisplayName>
+                  </Activity>
+                  <Activity Buttons="Cancel" FactoryWorkFlowObject="DisplayAssociationMessage" Id="GoodBrickRFIDRead2" Message="Good brick RFID read." NeedsInteraction="false" command="GenericWorkFlowSync">
+                  </Activity>
+                  <Activity Id="" command="IdleSystem">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Delay Time</DisplayName>
+                  </Activity>
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>UserInputMessage</Id>
+                      <Value>Place brick in chamber, close and latch the cover, then click CHAMBER READY. Click Cancel to Exit Loop if there was a problem with the tamper seal.</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>SuccessInput</Id>
+                      <Value>ChamberReady</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>MissingRFIDTagMessage</Id>
+                      <Value>ERROR: RFID Tag(s) missing: {0}</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>UnexpectedRFIDTagMessage</Id>
+                      <Value>ERROR: Unexpected RFID Tag(s) found: {0}</Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                  <WorkFlowTimeOut>0</WorkFlowTimeOut>
+                </WorkflowActivity>
+
+                
+                <WorkflowActivity Id="Track Lot IDs and Verify Termination" type="step">
+                  <Activity FactoryWorkFlowObject="FillDataValuesWithBagLots" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Fill DataValues With Bag Lots</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="CloseAssociationForm" Id="CloseAssociationForm" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Close Association Form</DisplayName>
+                  </Activity>
+                  
+                </WorkflowActivity>
+               
+                <WorkflowActivity Id="Open chamber locking pin for bag" type="step">
+                  <FactoryConfigObject>ProductsWorkflowActivityConfig</FactoryConfigObject>
+                  <Activity FactoryWorkFlowObject="TriggerOutput" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Trigger Output</DisplayName>
+                  </Activity>
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>PORTID</Id>
+                      <Value>17</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>TRIGGERVALUE</Id>
+                      <Value>false</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>TRIGGERTIME</Id>
+                      <Value>-1</Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                </WorkflowActivity>
+               
+                <WorkflowActivity Id="Track Lot IDs and Verify Termination (part 2)" type="step">
+                  <Activity FactoryWorkFlowObject="ShowBrickCompleteDialog" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Brick Complete</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="ClearDatavalues" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Label Verify Work Flow Object</DisplayName>
+                  </Activity>
+                  <Activity FactoryWorkFlowObject="CleanUp" Id="" command="GenericWorkFlowSync">
+                    <FactoryConfigObject>ProductsActivityConfig</FactoryConfigObject>
+                    <DisplayName>Clean Up</DisplayName>
+                  </Activity>
+                  <KeyValuePairs>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>ShowOnce</Id>
+                      <Value>false</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>Message</Id>
+                      <Value>Remove Brick from Chamber and place on Finished Goods Shelf.</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>Caption</Id>
+                      <Value>Brick Complete</Value>
+                    </WorkFlowActivityKeyValuePair>
+                    <WorkFlowActivityKeyValuePair>
+                      <Id>Buttons</Id>
+                      <Value>OK</Value>
+                    </WorkFlowActivityKeyValuePair>
+                  </KeyValuePairs>
+                  <WorkFlowTimeOut>0</WorkFlowTimeOut>
+                </WorkflowActivity>
+              </WorkflowActivitys>
+            </Workflow>
+          </Side>
+        </Sides>
+      </Product>
+    </Products>
+  </Machine>
+</Machines>
