@@ -8,8 +8,8 @@ def load_config(file):
     return target
 
 def test():
-    camera = Camera(camera_id='DM150')
-    camera.add_camera()
+    camera = Camera()
+    camera.add_camera(camera_id='DM150',camera_name = 'DataMan 150',connected = 'true')
 
 
 if __name__ == '__main__':
