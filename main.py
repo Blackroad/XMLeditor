@@ -1,18 +1,16 @@
-import xml.etree.cElementTree as ET
+import json
+from camera import Camera
 
 
-def editEML(filename):
-    tree = ET.ElementTree(file=filename)
-    root = tree.getroot()
+def load_config(file):
+    with open(file) as opened_file:
+        target = json.load(opened_file)
+    return target
 
-    camera = tree.find('.//Cameras/')
-    camera.attrib['Id'] = 'DataMan152'
-
-    print (camera.attrib)
-    tree = ET.ElementTree(root)
-    with open('FinalPackBag.xml', 'wb') as f:
-         tree.write(f)
+def test():
+    camera = Camera(camera_id='DM150')
+    camera.add_camera()
 
 
 if __name__ == '__main__':
-    editEML('FinalPackBag.xml')
+    test()

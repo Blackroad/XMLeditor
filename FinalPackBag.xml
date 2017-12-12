@@ -92,7 +92,7 @@
         </Mes>
       </MesSystems>
       <Cameras>
-        <Camera Id="DataMan152">
+        <Camera Id="DM152">
           <FactoryConfigObject>CameraMachineConfig</FactoryConfigObject>
           <DisplayName>CAMERA - Manual</DisplayName>
           <FactoryObject>ManualCamera</FactoryObject>
